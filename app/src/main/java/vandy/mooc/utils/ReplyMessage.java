@@ -59,7 +59,7 @@ public class ReplyMessage extends RequestReplyMessageBase {
         // Put the path to the image file into the Bundle via the
         // IMAGE_PATHNAME key only if the download succeeded.
         // TODO -- you fill in here.
-        if (replyMessage.getMessage().arg1 == Activity.RESULT_OK) {
+        if (pathToImageFile != null) {
             data.putString(IMAGE_PATHNAME, pathToImageFile.toString());
         }
             // Set the Bundle to be the data in the message.

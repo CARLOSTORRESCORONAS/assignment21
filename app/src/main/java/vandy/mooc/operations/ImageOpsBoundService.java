@@ -55,8 +55,7 @@ public class ImageOpsBoundService extends ImageOpsImpl {
                 // in mRequestMessengerRef.
                 // TODO -- you fill in here.
                 mRequestMessengerRef = new Messenger(binder);
-                Log.d(TAG,"onServiceConnected()..mRequestMessengerRef " + mRequestMessengerRef);
-
+                //Log.d(TAG,"onServiceConnected()..mRequestMessengerRef " + mRequestMessengerRef);
             }
 
             /**
@@ -95,17 +94,18 @@ public class ImageOpsBoundService extends ImageOpsImpl {
             // that can download an image from the URL given by the
             // user.  
             // TODO - you fill in here.
-            Intent intent = DownloadImagesBoundService.makeIntent(mActivity.get().getApplicationContext());
+            Intent intent = DownloadImagesBoundService.makeIntent(mActivity.get());
 
             Log.d(TAG, "calling bindService()");
 
             // Bind to the Service associated with the Intent.
             // TODO -- you fill in here.
+//            ComponentName a = mActivity.get().getApplicationContext().startService(intent);
 
-            mActivity.get().getApplicationContext().bindService(intent,
+            mActivity.get().bindService(intent,
                     mServiceConnection,
                     Context.BIND_AUTO_CREATE);
-            Log.d(TAG, "calling bindService() after");
+
         }
     }
 
@@ -118,7 +118,7 @@ public class ImageOpsBoundService extends ImageOpsImpl {
             Log.d(TAG, "calling unbindService()");
             // Unbind from the Service.
             // TODO -- you fill in here.
-            mActivity.get().getApplicationContext().unbindService(mServiceConnection);
+            mActivity.get().unbindService(mServiceConnection);
             // Set this field to null to trigger a call to
             // bindService() next time bindService() is called.
             // TODO -- you fill in here.

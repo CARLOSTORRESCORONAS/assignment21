@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
 import android.os.Messenger;
+import android.util.Log;
 
 /**
  * Super class that defines common keys and methods used by the
@@ -106,6 +107,7 @@ class RequestReplyMessageBase {
 
         // Extract the path to the image file from the Bundle, which
         // should be stored using the IMAGE_URL key.
+        Log.d("TAG","imageUrl..." + data.getString(IMAGE_URL) );
         return Uri.parse(data.getString(IMAGE_URL));
     }
 
@@ -116,6 +118,7 @@ class RequestReplyMessageBase {
     public static String getImagePathname(Bundle data) {
         // Extract the path to the image file from the Bundle, which
         // should be stored using the IMAGE_PATHNAME key.
+        Log.d("TAG","IMAGE_PATHNAME..." + data.getString(IMAGE_PATHNAME) );
         return data.getString(IMAGE_PATHNAME);
     }
 

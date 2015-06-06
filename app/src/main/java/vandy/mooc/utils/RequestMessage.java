@@ -43,8 +43,7 @@ public class RequestMessage extends RequestReplyMessageBase {
         // Message.
         // TODO -- you fill in here.
 
-        Message message = new Message();
-        message.replyTo = replyMessenger;
+        requestMessage.mMessage.replyTo = replyMessenger;
 
         // Create a new Bundle to handle the result.
         // TODO -- you fill in here.
@@ -63,7 +62,7 @@ public class RequestMessage extends RequestReplyMessageBase {
         data.putInt(REQUEST_CODE,requestCode);
         // Set the Bundle as the "data" for the Message.
         // TODO -- you fill in here.
-        message.setData(data);
+        requestMessage.mMessage.setData(data);
         // Return the message to the caller.
         return requestMessage;
     }
